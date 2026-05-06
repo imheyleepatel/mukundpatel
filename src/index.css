@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 213 70% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 70% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 70% 12%;
+
+    --primary: 213 78% 15%;            /* navy #0A2540 */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 211 73% 53%;
+
+    --accent: 211 73% 53%;              /* soft blue #2E86DE */
+    --accent-foreground: 0 0% 100%;
+
+    --secondary: 210 25% 97%;           /* light grey #F5F7FA */
+    --secondary-foreground: 213 78% 15%;
+
+    --muted: 210 25% 96%;
+    --muted-foreground: 215 16% 40%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 25% 90%;
+    --input: 214 25% 90%;
+    --ring: 211 73% 53%;
+
+    --radius: 0.625rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(213 78% 15% / 0.92) 0%, hsl(213 70% 22% / 0.85) 60%, hsl(211 73% 35% / 0.8) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(213 78% 15%), hsl(211 73% 45%));
+    --shadow-elegant: 0 20px 50px -20px hsl(213 78% 15% / 0.25);
+    --shadow-card: 0 4px 20px -8px hsl(213 78% 15% / 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 { @apply font-display tracking-tight; }
+}
+
+@layer components {
+  .container-pro { @apply max-w-7xl mx-auto px-6 lg:px-10; }
+  .section-pad { @apply py-20 md:py-28; }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-accent;
+  }
+}
